@@ -1,0 +1,97 @@
+.main
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  padding: 3rem
+  .arrow
+    position: fixed
+    font-size: 3rem
+    bottom: 10px
+    opacity: 0
+    &.active
+      animation: semi-appear 1s linear forwards, jump 2s ease-out 1s infinite
+    & > svg
+      font-size: 3rem
+
+  & > section
+    min-height: 90vh
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    margin-bottom: 3rem
+    font-size: 2em
+    &.performance
+      justify-content: flex-end
+
+.revealed
+  position: relative
+  opacity: 0
+
+  &.active
+    opacity: 1
+    animation: fade-bottom 1s ease-in
+    text-align: center
+
+    &.fade-left 
+      align-items: flex-start
+      text-align: start
+      animation: fade-left 1s ease-in
+
+    &.fade-right 
+      align-items: flex-end
+      text-align: end
+      animation: fade-right 1s ease-in
+
+
+@keyframes fade-bottom 
+  0% 
+    transform: translateY(50px)
+    opacity: 0
+  
+  100% 
+    transform: translateY(0)
+    opacity: 1
+  
+
+@keyframes fade-left 
+  0% 
+    transform: translateX(-100px)
+    opacity: 0
+  
+  100% 
+    transform: translateX(0)
+    opacity: 1
+  
+
+@keyframes fade-right 
+  0% 
+    transform: translateX(100px)
+    opacity: 0
+  
+  100% 
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes jump
+  0% 
+    transform: translateY(-50px)
+  
+  100% 
+    transform: translateX(0)
+
+@keyframes semi-appear
+  0% 
+    opacity: 0
+  
+  100% 
+    opacity: 0.5
+
+@keyframes appear
+  0% 
+    opacity: 0
+
+  100% 
+    opacity: 1

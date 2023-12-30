@@ -1,47 +1,22 @@
-.DS_Store
+# build output
+dist/
 
-.env
-# IDE
-/.idea/
-/.vscode/
+# generated types
+.astro/
 
-# backend
-/backend/.venv/
-/backend/**/__pycache__/
-
-# nextjs
 # dependencies
-/nextjs/node_modules/
-/nextjs/.pnp
-.pnp.js
-.yarn/install-state.gz
-# testing
-/coverage
+node_modules/
 
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# next.js
-/nextjs/.next/
-/nextjs/out/
+# environment variables
+.env
+.env.production
 
-# production
-/nextjs/build
-
-# misc
-/nextjs.DS_Store
-*.pem
-
-# debug
-/nextjs/npm-debug.log*
-/nextjs/yarn-debug.log*
-/nextjs/yarn-error.log*
-
-# local env files
-/nextjs/.env*.local
-
-# vercel
-/nextjs/.vercel
-
-# typescript
-*.tsbuildinfo
-/nextjs/next-env.d.ts
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# macOS-specific files
+.DS_Store
+_old/*

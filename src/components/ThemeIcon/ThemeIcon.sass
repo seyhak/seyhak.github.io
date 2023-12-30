@@ -1,0 +1,11 @@
+#themeToggle
+  > svg
+    &:hover
+      @apply transition delay-150 duration-300
+      filter: drop-shadow(0 0 0.5rem yellow)
+    max-height: 2rem
+    max-width: 2rem
+    .sun
+      @apply fill-yellow-500 dark:fill-transparent
+    .moon
+      @apply fill-transparent dark:fill-gray-400

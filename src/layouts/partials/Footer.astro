@@ -1,0 +1,51 @@
+---
+import Social from "@components/Social.astro"
+import TypographyLink from "@components/TypographyLink/TypographyLink.astro"
+
+import { SOCIAL_MEDIA_SERVICES } from "src/types/social-media"
+
+const SOCIALS = [
+  {
+    name: "deemsystem",
+    link: "https://www.instagram.com//",
+    service: SOCIAL_MEDIA_SERVICES.INSTAGRAM
+  },
+  {
+    name: "deemsystem",
+    link: "https://www.facebook.com/",
+    service: SOCIAL_MEDIA_SERVICES.FACEBOOK
+  }
+]
+---
+
+<footer class="px-6 py-3 mt-16 text-black dark:text-blue-50 max-sm:block">
+  <div class="flex justify-center min-h-1 min-w-1">
+    <div
+      class="dark:bg-blue-700 bg-slate-800 items-center min-h-1 min-w-4 rounded mb-1"
+    >
+    </div>
+  </div>
+  <div
+    class="flex justify-around items-center mx-auto max-sm:flex-col max-sm:gap-2"
+  >
+    <TypographyLink href="about">About</TypographyLink>
+    <TypographyLink href="algo-structs">Alghoritms & Structures</TypographyLink>
+  </div>
+  <div class="flex justify-center items-center gap-4 my-3">
+    {
+      SOCIALS.map((social) => (
+        <Social
+          service={social.service}
+          name={social.name}
+          link={social.link}
+        />
+      ))
+    }
+  </div>
+  <div class="flex justify-center items-center mt-3">
+    <p class="text-xs">
+      Powered by Astro, Made by <b>Seyhak Ly</b>, Copyright
+      © 2024
+    </p>
+  </div>
+</footer>

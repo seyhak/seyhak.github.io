@@ -1,0 +1,80 @@
+---
+import TypographyLink from "@components/TypographyLink/TypographyLink.astro"
+import BaseLayout from "@layouts/BaseLayout.astro"
+import { getFormattedDate } from "@utils/date"
+
+const publishedDate = new Date("2024-03-01 17:20")
+type Props = {
+  frontmatter: any
+}
+const publishedAtLocal = getFormattedDate(publishedDate)
+---
+
+<BaseLayout
+  pageTitle="About me"
+  description="Find out more about creatator of the programming blog."
+  ogType="profile"
+  mainClass="items-center justify-start"
+>
+  <Fragment slot="meta">
+    <!-- Todo = SEO schema.org script -->
+  </Fragment>
+  <section>
+    <address>
+      <div class="mb-2 not-italic">
+        <h3>📧 Email</h3>
+        <TypographyLink href="mailto:seyhaklyco@gmail.com">
+          seyhaklyco@gmail.com
+        </TypographyLink>
+      </div>
+    </address>
+    <article itemscope itemtype="https://schema.org/Article" class="mt-8">
+      <meta
+        itemprop="article:datePublished"
+        content={publishedDate.toISOString()}
+      />
+      <meta itemprop="article:publisher" content="Seyhak Ly" />
+      <meta itemprop="article:author" content="Seyhak Ly" />
+      <header>
+        <p>{publishedAtLocal}</p>
+      </header>
+      <h2>
+        <span itemprop="name">DeeM System</span>
+      </h2>
+      <p itemprop="description">
+        Firma powstała w Opolu z myślą o świadomych klientach stawiających na
+        najwyższą jakość. Zapewniamy profesjonalny montaż oraz fachowe doradztwo.
+        Jesteśmy producentem systemów roletowych oraz moskitierowych. Doświadczona
+        załoga jak i nowoczesny park maszynowy pozwalają nam na produkcję
+        najwyższej jakości - opartej na specjalnie wyselekcjonowanych komponentach
+        od czołowych europejskich dostawców. Stawiamy przede wszystkim na jakość,
+        co przekłada się na zadowolenie klienta. Nasze indywidualne podejście do
+        klientapozwala najoptymalniej dobrać system do potrzeb, co pozwala uniknąć
+        ewentualnych błedów w trakcie inwestycji. W naszej ofercie znajdują się:
+      </p>
+      <ul class="list-disc">
+        <li class="ml-8">markizy tarasowe i balkonowe</li>
+        <li class="ml-8">rolety zewnętrzne</li>
+        <li class="ml-8">rolety wewnętrzne</li>
+        <li class="ml-8">moskitiery</li>
+        <li class="ml-8">żaluzje fasadowe</li>
+        <li class="ml-8">żaluzje wewnętrzne (aluminiowe i drewniane)</li>
+        <li class="ml-8">refleksole</li>
+        <li class="ml-8">pergole</li>
+        <li class="ml-8">
+          system VERNDA (osłona przeszkleń poziomych i skośnych)
+        </li>
+        <li class="ml-8">sunbreakery</li>
+        <li class="ml-8">fotorolety</li>
+        <li class="ml-8">rolety z dowolnym nadrukiem</li>
+      </ul>
+      <p>
+        Obsługujemy zarówno klientów indywidualnych jak i instytucjonalnych,
+        deweloperów, współpracujemy z pracowniami architektonicznymi.
+      </p>
+      <h4 class="mt-4">
+        Jesteśmy do Państwa dyspozycji - zapraszamy do kontaktu.
+      </h4>
+    </article>
+  </section>
+</BaseLayout>

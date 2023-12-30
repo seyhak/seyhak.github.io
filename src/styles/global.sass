@@ -1,0 +1,111 @@
+// @font-face {
+//   font-display: optional
+//   font-family: "Anybody"
+//   font-style: normal
+//   font-weight: 400
+//   src: url("../fonts/anybody-v11-latin-regular.woff2") format("woff2")
+// }
+
+*
+  // ensure a more consistent and predictable box model throughout project
+  box-sizing: border-box
+  h1
+    @apply text-3xl md:text-4xl my-4 font-bold text-center
+  h2
+    @apply text-2xl md:text-3xl my-3 font-semibold
+  h3
+    @apply text-xl md:text-2xl my-2 font-medium
+  h4
+    @apply text-lg md:text-xl font-medium
+  h5
+    @apply text-base md:text-lg font-medium
+  p
+    @apply text-sm md:text-base my-1
+
+textarea
+  resize: none
+
+input, textarea
+  @apply rounded
+
+html
+  @apply font-barlow md:text-base lg:text-lg xl:text-xl
+
+.revealed
+  position: relative
+  opacity: 0
+
+  &.active
+    opacity: 1
+    animation: fade 1s ease-in
+    text-align: center
+
+    &.fade-bottom
+      justify-content: center
+      text-align: start
+      animation: fade-bottom 1s ease-in
+
+    &.fade-left
+      justify-content: flex-start
+      text-align: start
+      animation: fade-left 1s ease-in
+
+    &.fade-right
+      justify-content: flex-end
+      text-align: end
+      animation: fade-right 1s ease-in
+
+@keyframes fade
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes fade-bottom
+  0%
+    transform: translateY(50px)
+    opacity: 0
+
+  100%
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes fade-left
+  0%
+    transform: translateX(-100px)
+    opacity: 0
+
+  100%
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes fade-right
+  0%
+    transform: translateX(100px)
+    opacity: 0
+
+  100%
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes jump
+  0%
+    transform: translateY(-50px)
+
+  100%
+    transform: translateX(0)
+
+@keyframes semi-appear
+  0%
+    opacity: 0
+
+  100%
+    opacity: 0.5
+
+@keyframes appear
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1

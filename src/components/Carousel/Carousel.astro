@@ -1,0 +1,58 @@
+---
+import classNames from "classnames"
+import ButtonLink from "@components/ButtonLink/ButtonLink.astro"
+import type { ImageMetadata } from "astro"
+import { Image } from "astro:assets"
+import "./Carousel.sass"
+
+type ImageWithAlt = {
+  alt: string
+  src: ImageMetadata
+  href?: string
+  className?: string
+}
+type Props = {
+  images: ImageWithAlt[]
+}
+const { images } = Astro.props
+const commonImgClassNames =
+  "md:max-h-[8rem] 2xl:max-h-[10rem] max-md:max-w-[80%] max-md:h-full flex-1 object-contain md:w-full m-auto"
+---
+
+<div
+  class="flex md:max-h-[8rem] 2xl:max-h-[10rem] max-md:max-h-[80dvh] flex-1 flex-col md:flex-row w-auto my-auto ease-linear overflow-clip relative"
+>
+  {
+    [...Array(1).keys()].map((idx1) => (
+      <div class="max-md:max-h-[80dvh] overflow-clip flex min-w-full Carousel gap-8 max-md:flex-col items-center justify-center">
+        {[...Array(1).keys()].map((idx) =>
+          images.map((img) =>
+            img.href ? (
+              <a
+                aria-label={img.alt}
+                href={img.href}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                class="flex justify-center items-center gap-1"
+              >
+                <ButtonLink className="flex cursor-pointer" label={img.alt}>
+                  <Image
+                    class={classNames(commonImgClassNames, img.className)}
+                    src={img.src}
+                    alt={img.alt}
+                  />
+                </ButtonLink>
+              </a>
+            ) : (
+              <Image
+                class={classNames(commonImgClassNames, img.className)}
+                src={img.src}
+                alt={img.alt}
+              />
+            )
+          )
+        )}
+      </div>
+    ))
+  }
+</div>

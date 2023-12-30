@@ -1,0 +1,29 @@
+---
+import Hamburger from "@components/Hamburger/Hamburger.astro"
+import Navigation from "./Navigation.astro"
+// import LanguagePicker from "@components/LanguagePicker/LanguagePicker.astro"
+import ThemeIcon from "@components/ThemeIcon/ThemeIcon.astro"
+import { Image } from "astro:assets"
+import Logo from "@assets/images/profile-pic.png"
+---
+
+<header class="mb-2 px-6 py-3 flex justify-between items-center space-around">
+  <Hamburger />
+  <a href="/" aria-label="go home" class="flex max-w-[30%] max-md:max-w-[50%]">
+    <Image
+      src={Logo}
+      alt="logo"
+      loading="eager"
+      class="md:max-h-[5rem] max-md:max-w-[3rem] w-auto h-auto"
+      width={Logo.width / 4}
+      densities={[2, 4]}
+    />
+  </a>
+  <Navigation
+    className="md:flex items-center justify-center gap-8 max-md:hidden flex-1"
+  />
+  <div>
+    <!-- <LanguagePicker /> -->
+    <ThemeIcon />
+  </div>
+</header>

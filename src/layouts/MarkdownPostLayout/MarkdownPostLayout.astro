@@ -1,0 +1,49 @@
+---
+import "./MarkdownPostLayout.sass"
+import BaseLayout from "../BaseLayout.astro"
+import { getFormattedDate } from "@utils/date"
+type Props = {
+  frontmatter: any
+}
+const { frontmatter } = Astro.props
+const publishedAtLocal = getFormattedDate(frontmatter.publishedAt)
+---
+
+<BaseLayout pageTitle={frontmatter.title} ogType="article">
+  <Fragment slot="meta">
+    <meta
+      name="article:published_time"
+      content={frontmatter.publishedAt.toISOString()}
+    />
+    <meta
+      name="article:modified_time"
+      content={frontmatter.publishedAt.toISOString()}
+    />
+    <meta
+      name="article:expiration_time"
+      content={frontmatter.publishedAt.toISOString()}
+    />
+    <meta name="article:author" content="Ania Ganowska" />
+    <meta name="article:section" content="Weterynaria" />
+    <meta name="article:tag" content={frontmatter.tags} />
+  </Fragment>
+  <article itemscope itemprop="https://schema.org/Article" class="post">
+    <meta
+      itemprop="datePublished"
+      content={frontmatter.publishedAt.toISOString()}
+    />
+    <meta itemprop="publisher" content="Anna Ganowska" />
+    <header>
+      <p>{publishedAtLocal}</p>
+      <h1 itemprop="author headline">{frontmatter.title}</h1>
+      <p><em>{frontmatter.description}</em></p>
+      <a itemprop="author" href="/about">Autor: {frontmatter.author}</a>
+      <img
+        src={frontmatter.image.url}
+        width="300"
+        alt={frontmatter.image.alt}
+      />
+    </header>
+    <slot />
+  </article>
+</BaseLayout>

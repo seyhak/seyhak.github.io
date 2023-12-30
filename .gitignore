@@ -1,0 +1,47 @@
+.DS_Store
+
+.env
+# IDE
+/.idea/
+/.vscode/
+
+# backend
+/backend/.venv/
+/backend/**/__pycache__/
+
+# nextjs
+# dependencies
+/nextjs/node_modules/
+/nextjs/.pnp
+.pnp.js
+.yarn/install-state.gz
+# testing
+/coverage
+
+
+# next.js
+/nextjs/.next/
+/nextjs/out/
+
+# production
+/nextjs/build
+
+# misc
+/nextjs.DS_Store
+*.pem
+
+# debug
+/nextjs/npm-debug.log*
+/nextjs/yarn-debug.log*
+/nextjs/yarn-error.log*
+
+# local env files
+/nextjs/.env*.local
+
+# vercel
+/nextjs/.vercel
+
+# typescript
+*.tsbuildinfo
+/nextjs/next-env.d.ts
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.

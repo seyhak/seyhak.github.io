@@ -1,0 +1,16 @@
+---
+import "./ButtonLink.sass"
+type Props = {
+  className?: string
+  label: string
+}
+const { className, label } = Astro.props
+---
+
+<div
+  class={`svg-wrapper ${className || ""}`}
+  role="link"
+  aria-label={`Go to ${label}`}
+>
+  <slot />
+</div>

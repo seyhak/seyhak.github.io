@@ -1,0 +1,66 @@
+---
+import Footer from "./partials/Footer.astro"
+import Header from "./partials/Header.astro"
+import "@fontsource/barlow-condensed"
+
+import "@styles/global.sass"
+type Props = {
+  pageTitle?: string
+  description?: string
+  ogDescription?: string
+  ogType?: string
+  mainWrapperClass?: string
+  mainClass?: string
+}
+const {
+  pageTitle = "Seyhak Ly",
+  description = "",
+  ogDescription = "Seyhak Ly github page",
+  ogType = "website",
+  mainClass = "items-center justify-center mx-8 max-sm:mx-5",
+  mainWrapperClass = "max-sm:block mx-auto md:max-w-[90dvw] xl:max-w-[80dvw]"
+} = Astro.props
+const url = "seyhak.github.io"
+const locale = "en"
+const ogLocale = "en_EN"
+const siteName = "Seyhak Ly github page"
+---
+
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- <meta name="google-site-verification" content="..."> -->
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{pageTitle}</title>
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:url" content={url} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content="assets/images/logo.png" />
+    <slot name="meta" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="src/scripts/global-raw.js"></script>
+  </head>
+  <body
+    class:list={[
+      "dark:text-slate-50 bg-gradient-to-br",
+      "from-blue-200 via-blue-100 to-slate-50",
+      "dark:from-slate-900 dark:via-stone-900 dark:to-blue-950"
+    ]}
+  >
+    <Header />
+    <div class:list={["flex min-h-[80dvh]", mainWrapperClass]}>
+      <main class:list={["flex flex-col gap-2 flex-1", mainClass]}>
+        <slot />
+      </main>
+    </div>
+    <Footer />
+  </body>
+</html>

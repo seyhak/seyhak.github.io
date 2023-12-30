@@ -1,0 +1,34 @@
+---
+import { SOCIAL_MEDIA_SERVICES } from "src/types/social-media"
+
+import InstagramIcon from "@assets/svgs/instagram.svg?raw"
+import FacebookIcon from "@assets/svgs/facebook.svg?raw"
+import ButtonLink from "@components/ButtonLink/ButtonLink.astro"
+
+export type Props = {
+  name: string
+  link: string
+  service: (typeof SOCIAL_MEDIA_SERVICES)[keyof typeof SOCIAL_MEDIA_SERVICES]
+}
+const ICONS = {
+  [SOCIAL_MEDIA_SERVICES.INSTAGRAM]: InstagramIcon,
+  [SOCIAL_MEDIA_SERVICES.FACEBOOK]: FacebookIcon
+}
+const { name, link, service } = Astro.props
+const serviceIcon = ICONS[service]
+---
+
+<a
+  aria-label={name}
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer nofollow"
+  class="flex justify-center items-center gap-1"
+>
+  <ButtonLink
+    label={name}
+    className="flex fill-black hover:text-slate-900 hover:fill-slate-900 dark:fill-blue-50 dark:hover:fill-white"
+  >
+    <Fragment set:html={serviceIcon} />
+  </ButtonLink>
+</a>

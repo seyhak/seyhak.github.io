@@ -1,0 +1,21 @@
+---
+import "./Hamburger.sass"
+import Navigation from "@layouts/partials/Navigation.astro"
+---
+
+<div class="relative md:absolute">
+  <input id="menuToggle" type="checkbox" class="hidden" />
+  <!-- pluging bug -->
+  <label
+    for="menuToggle"
+    class="hamburger md:hidden max-md:grid grid-cols-1 grid-rows-3 cursor-pointer"
+  >
+    <span class="bg-black min-w-7 min-h-0.5 rounded"></span>
+    <span class="bg-black min-w-7 min-h-0.5 rounded"></span>
+    <span class="bg-black min-w-7 min-h-0.5 rounded"></span>
+  </label>
+  <Navigation
+    light
+    className="navigation absolute mt-8 flex-col justify-center items-center gap-6 w-svw md:hidden py-6 top-2 md:-top-1.5 dark:bg-blue-950 z-20 bg-purple-500"
+  />
+</div>

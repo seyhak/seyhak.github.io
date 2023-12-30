@@ -1,0 +1,111 @@
+---
+import { Image } from "astro:assets"
+// import { getRelativeLocaleUrl } from "astro:i18n"
+// import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import BaseLayout from "@layouts/BaseLayout.astro"
+// import Carousel from "@components/Carousel/Carousel.astro"
+// import IndexSectionWithImg from "@components/IndexSectionWithImg/IndexSectionWithImg.astro"
+
+// const CO_IMAGES = [
+//   {
+//     src: SeltLogoImg,
+//     href: "",
+//     alt: t("index.collaboration.selt.alt"),
+//     className: "md:w-auto m-auto"
+//   },
+//   {
+//     src: AluprofLogoImg,
+//     href: "",
+//     alt: t("index.collaboration.aluprof.alt"),
+//     className: "w-full dark:invert dark:brightness-50"
+//   }
+// ]
+
+---
+
+<BaseLayout>
+  <section class="flex flex-col justify-center gap-4">
+    <h2 class="flex justify-center mb-0">Experience</h2>
+    <div>
+      <h4>12.2023 – now</h4>
+      <p>Self employed freelancing & consulting</p>
+    </div>
+    <div>
+      <h4>11.2022 – 11.2023</h4>
+      <p>World tour gap year</p>
+    </div>
+    <div>
+      <h4>04.2022 – 11.2022</h4>
+      <p>        Fullstack Web Developer at Acaisoft
+        Building API on Django (DRF) and React. On side project utilized
+        GraphQL. Additional PoC React and Tauri.
+        Achievements: Optimized query from 7s to below 1, Dockerized the
+        project, introduced FE tests, decreased weight of FE package.</p>
+    </div>
+    <div>
+      <h4>02.2020 – 03.2022</h4>
+      <p>        Fullstack Web Developer at Correct Context - Shareablee
+        Building REST API using Django (DRF) and frontend with React
+        + Redux. Utilizing external APIs, processing that data and
+        presenting the data in various attractive ways. ElasticSearch and
+        Postgres were the main databases.
+        Achievements: Optimized ES and PG queries. Bumped Python from 2
+        to 3, Refactored plenty of code utilizing Builder pattern.</p>
+    </div>
+    <div>
+      <h4>11.2019 - 01.2020</h4>
+      <p>Junior Support Specialist at Hemmersbach, Wrocław</p>
+    </div>
+  </section>
+  <!-- <section class="flex flex-col justify-center gap-4">
+    <h2 class="revealed mb-0">{t("index.offer")}</h2> -->
+    <!-- <IndexSectionWithImg
+      className="revealed fade-left flex-row-reverse"
+      title={t("index.offer.pergola.title")}
+      description={t("index.offer.pergola.description")}
+      imgSrc={PergolaImg}
+      imgAlt={t("index.offer.pergola.alt")}
+    />
+    <IndexSectionWithImg
+      className="revealed fade-right"
+      title={t("index.offer.blinds.title")}
+      description={t("index.offer.blinds.description")}
+      imgSrc={BlindsImg}
+      imgAlt={t("index.offer.blinds.alt")}
+    />
+    <IndexSectionWithImg
+      className="revealed fade-left flex-row-reverse"
+      title={t("index.offer.blindsInner.title")}
+      description={t("index.offer.blindsInner.description")}
+      imgSrc={InnerBlindsImg}
+      imgAlt={t("index.offer.blindsInner.alt")}
+    />
+    <IndexSectionWithImg
+      className="revealed fade-right"
+      title={t("index.offer.awning.title")}
+      description={t("index.offer.awning.description")}
+      imgSrc={AwningImg}
+      imgAlt={t("index.offer.awning.alt")}
+    />
+    <IndexSectionWithImg
+      className="revealed fade-left flex-row-reverse"
+      title={t("index.offer.rollerBlinds.title")}
+      description={t("index.offer.rollerBlinds.description")}
+      imgSrc={RollerImg}
+      imgAlt={t("index.offer.rollerBlinds.alt")}
+    />
+  </section> -->
+  <!-- <section class="revealed fade-bottom my-6 w-full">
+    <h2 class="text-center">{t("index.collaboration")}</h2>
+    <Carousel images={CO_IMAGES} />
+  </section>
+  <section class="revealed fade-bottom my-6 w-full">
+    <h2 class="text-center">{t("index.trustedus")}</h2>
+    <Carousel images={TRUSTED_US_IMAGES} />
+  </section> -->
+  <!-- <section class="revealed fade-bottom my-6 w-full">
+    <h2 class="text-center">{t("index.reviews")}</h2>
+    Opinie
+    https://developers.google.com/my-business/reference/rest/v4/accounts.locations.reviews/list
+  </section> -->
+</BaseLayout>

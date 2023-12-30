@@ -1,0 +1,13 @@
+---
+import { LANGUAGES } from "@i18n/ui"
+---
+
+<ul>
+  {
+    Object.entries(LANGUAGES).map(([lang, label]) => (
+      <li>
+        <a href={`/${lang}/`}>{label}</a>
+      </li>
+    ))
+  }
+</ul>

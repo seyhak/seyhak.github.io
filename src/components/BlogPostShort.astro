@@ -1,0 +1,14 @@
+---
+import TypographyLink from "./TypographyLink/TypographyLink.astro"
+import { getFormattedDate } from "@utils/date"
+
+const { post } = Astro.props
+const formattedPublishedAt = getFormattedDate(post.data.publishedAt)
+---
+
+<li class="flex flex-col items-start">
+  <span class="text-xs">{formattedPublishedAt}</span>
+  <TypographyLink href={`/posts/${post.slug}/`}
+    >{post.data.title}</TypographyLink
+  >
+</li>

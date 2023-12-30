@@ -1,0 +1,28 @@
+.hamburger
+  gap: 6px
+  > span
+    height: 3px
+    @apply bg-blue-950 dark:bg-blue-100
+  &:hover
+    > span
+      @apply bg-indigo-700 dark:bg-white transition ease-in-out duration-300 delay-100
+      @apply shadow shadow-indigo-700
+
+.navigation
+  @apply hidden
+
+#menuToggle
+  &:checked
+    background: blue
+    &~.navigation
+      @apply max-md:flex -left-8
+    &~label
+      > span
+        opacity: 1
+        transform: rotate(45deg) translate(-7px, -6px)
+        @apply bg-blue-950 dark:bg-blue-100
+        &:nth-last-child(3)
+          opacity: 0
+          transform: rotate(0deg) scale(0.2, 0.2)
+        &:nth-last-child(2)
+          transform: rotate(-45deg) translate(0, -1px)

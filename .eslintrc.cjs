@@ -1,7 +1,7 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   plugins: ["jsx-a11y"],
-  extends: ["plugin:astro/recommended", "plugin:jsx-a11y/recommended"],
+  extends: ["plugin:astro/recommended", "plugin:jsx-a11y/recommended", "plugin:react-hooks/recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname,

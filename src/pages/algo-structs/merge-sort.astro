@@ -1,0 +1,28 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro"
+import { BarChart } from "@components/react/alghorithms/BarChart.tsx"
+import { ALGORITHMS } from "src/types/algorithms.ts"
+---
+
+<BaseLayout
+  pageTitle="Bubble sort"
+  description="Visualised Sorting alghoritms"
+  ogDescription="Visualised Sorting alghoritms & structures"
+  ogType="website"
+  mainClass="items-center justify-start mx-8 max-sm:mx-5"
+>
+  <h2>Merge Sort</h2>
+  <p>O(n log(n))</p>
+  <BarChart client:load sortingAlgorithmName={ALGORITHMS.MERGE_SORT} />
+  <p>
+    Merge sort keeps on dividing the list into equal halves until it can no more
+    be divided. By definition, if it is only one element in the list, it is
+    considered sorted. Then, merge sort combines the smaller sorted lists
+    keeping the new list sorted too.
+  </p>
+  <a
+    href="https://www.tutorialspoint.com/data_structures_algorithms/merge_sort_algorithm.htm"
+  >
+    Merge sort
+  </a>
+</BaseLayout>

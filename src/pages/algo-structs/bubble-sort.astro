@@ -1,13 +1,26 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
+import { BarChart } from "@components/react/alghorithms/BarChart.tsx"
+import { ALGORITHMS } from "src/types/algorithms.ts"
 ---
+
 <BaseLayout
-  pageTitle = "Bubble sort"
-  description = "Visualised Sorting alghoritms"
-  ogDescription = "Visualised Sorting alghoritms & structures"
-  ogType = "website"
-  mainClass = "items-center justify-start mx-8 max-sm:mx-5"
+  pageTitle="Bubble sort"
+  description="Visualised Sorting alghoritms"
+  ogDescription="Visualised Sorting alghoritms & structures"
+  ogType="website"
+  mainClass="items-center justify-start mx-8 max-sm:mx-5"
 >
   <h2>Bubble Sort</h2>
-
+  <p>O(n<sup>2</sup>)</p>
+  <BarChart client:load sortingAlgorithmName={ALGORITHMS.BUBBLE_SORT} />
+  <p>
+    We observe in algorithm that Bubble Sort compares each pair of array element
+    unless the whole array is completely sorted in an ascending order. This may
+    cause a few complexity issues like what if the array needs no more swapping
+    as all the elements are already ascending. To ease-out the issue, we use one
+    flag variable swapped which will help us see if any swap has happened or
+    not. If no swap has occurred, i.e. the array requires no more processing to
+    be sorted, it will come out of the loop.
+  </p>
 </BaseLayout>

@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets"
+import BaseLayout from "@layouts/BaseLayout.astro"
+import SanMarcoImg from "@assets/images/san_marco.jpg"
+---
+
+<BaseLayout
+  title="Seyhak Ly traveling"
+  description="I have travelled Asia, Europe, Americas and Africa during 6 years"
+>
+  <section class="flex flex-col justify-center gap-4">
+    <h2 class="flex justify-center mb-0">My Travels</h2>
+    <Image
+      src={SanMarcoImg}
+      alt="My photo in Guatemala San Marco"
+      width={SanMarcoImg.width / 2}
+      densities={[1.5, 2]}
+    />
+    <div>
+      <h6>10.2022 – 10.2023</h6>
+      <h2>World Tour 35 countries</h2>
+      <ul class="list-disc pl-6">
+        <li>Georgia</li>
+        <li>Armenia</li>
+        <li>India</li>
+        <li>Cambodia</li>
+        <li>Thailand</li>
+        <li>Japan</li>
+        <li>USA</li>
+        <li>Bolivia</li>
+        <li>Peru</li>
+        <li>Guatemala</li>
+        <li>Mexico</li>
+      </ul>
+    </div>
+    <div>
+      <h6>09.2022</h6>
+      <h2>Iceland</h2>
+    </div>
+    <div>
+      <h6>07.2022</h6>
+      <h2>Dolomites - Italy</h2>
+    </div>
+    <div>
+      <h6>03.2022</h6>
+      <h2>Malta</h2>
+    </div>
+    <div>
+      <h6>10.2021</h6>
+      <h2>Turkey</h2>
+    </div>
+    <div>
+      <h6>04.2021</h6>
+      <h2>Mexico</h2>
+    </div>
+    <div>
+      <h6>09.2020 - 10.2020</h6>
+      <h2>Balkans Car tour</h2>
+    </div>
+    <div>
+      <h6>09.2019</h6>
+      <h2>United Kingdom Hitchhiking</h2>
+    </div>
+    <div>
+      <h6>06.2019 - 06.2019</h6>
+      <h2>Eurotrip</h2>
+      <ul class="list-disc pl-6">
+        <li>Czech</li>
+        <li>Slovakia</li>
+        <li>Austria</li>
+        <li>Italy</li>
+        <li>France</li>
+        <li>Netherlands</li>
+        <li>Belgium</li>
+        <li>Germany</li>
+        <li>Switzerland</li>
+        <li>Ukraine</li>
+        <li>Litvania</li>
+        <li>Latva</li>
+        <li>Estionia</li>
+      </ul>
+    </div>
+    <div>
+      <h6>03.2019</h6>
+      <h2>Jordan</h2>
+    </div>
+    <div>
+      <h6>07.2018 - 09.2018</h6>
+      <h2>First Asia Trip</h2>
+      <ul class="list-disc pl-6">
+        <li>Vietnam</li>
+        <li>Cambodia</li>
+        <li>Thailand</li>
+      </ul>
+    </div>
+    <div>
+      <h6>09.2017</h6>
+      <h2>First Great travel - Egypt!</h2>
+    </div>
+  </section>
+</BaseLayout>
